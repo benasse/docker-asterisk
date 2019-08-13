@@ -1,5 +1,5 @@
 FROM ubuntu:bionic
-MAINTAINER Keith Rose <me@keithro.se>
+MAINTAINER Benoît Stahl <from@b5.pm>
 
 ENV DEBIAN_FRONTEND noninteractive
 
