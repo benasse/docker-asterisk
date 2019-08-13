@@ -18,9 +18,9 @@ RUN apt-get update -y && \
 WORKDIR /usr/src/asterisk
 
 RUN curl -s http://downloads.asterisk.org/pub/telephony/asterisk/asterisk-16-current.tar.gz \
-    | tar -xvz -C /usr/src/asterisk && \
-    contrib/scripts/get_mp3_source.sh && \
-    contrib/scripts/install_prereq install && \
+    | tar -xvz -C /usr/src/ && mv asterisk-*/ asterisk && \
+    /usr/src/asterisk/contrib/scripts/get_mp3_source.sh && \
+    /usr/src/asterisk/contrib/scripts/install_prereq install && \
     ./configure && \
     make menuselect.makeopts && \
     menuselect/menuselect --enable codec_opus --disable BUILD_NATIVE menuselect.makeopts
