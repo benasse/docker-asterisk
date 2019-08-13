@@ -12,10 +12,7 @@ RUN apt-get update -y && \
         libhtml-tagset-perl libhttp-date-perl libhttp-message-perl libio-html-perl \
         libio-string-perl liblwp-mediatypes-perl libparse-debianchangelog-perl \
         libsigc++-2.0-0v5 libsub-name-perl libtimedate-perl liburi-perl libxapian30 && \
-    apt-get install --yes --no-install-recommends python3-requests && \
-    mkdir -p /usr/src/asterisk
-
-WORKDIR /usr/src/asterisk
+    apt-get install --yes --no-install-recommends python3-requests
 
 RUN curl -s http://downloads.asterisk.org/pub/telephony/asterisk/asterisk-16-current.tar.gz \
     | tar -xvz -C /usr/src/ && mv /usr/src/asterisk-*/* /usr/src/asterisk/ && \
