@@ -43,8 +43,6 @@ RUN apt-get remove --yes git curl wget libnewt-dev libssl-dev \
     rm -rf /var/lib/apt/lists/*
 
 COPY configs/ /etc/asterisk/
-COPY configs/pjsip.d/* /etc/asterisk/pjsip.d/
-
 COPY startup.sh /root/startup.sh
 
 EXPOSE 5060/udp
