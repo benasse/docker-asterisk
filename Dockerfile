@@ -4,7 +4,7 @@ MAINTAINER Benoît Stahl <from@b5.pm>
 ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get update -y && \
-    apt-get install --yes --no-install-recommends git curl wget libnewt-dev libssl-dev \
+    apt-get install --yes git curl wget libnewt-dev libssl-dev \
         libncurses5-dev subversion  libsqlite3-dev build-essential libjansson-dev libxml2-dev  uuid-dev && \
     apt-get install --yes --no-install-recommends aptitude-common libboost-filesystem1.65.1 libboost-iostreams1.65.1 \
         libboost-system1.65.1 libcgi-fast-perl libcgi-pm-perl libclass-accessor-perl \
