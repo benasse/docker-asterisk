@@ -24,7 +24,7 @@ RUN contrib/scripts/get_mp3_source.sh && \
 
 RUN ./configure && \
     make menuselect.makeopts && \
-    menuselect/menuselect --enable DONT_OPTIMIZE --enable BETTER_BACKTRACES menuselect.makeopts
+    menuselect/menuselect --enable codec_opus codec_g729a menuselect.makeopts
 
 RUN make && make install && make config && ldconfig
 
@@ -34,6 +34,6 @@ COPY configs/pjsip.d/* /etc/asterisk/pjsip.d/
 COPY startup.sh /root/startup.sh
 
 EXPOSE 5060/udp
-EXPOSE 10000-20000/udp
+EXPOSE 10000-10100/udp
 
 ENTRYPOINT ["/bin/bash", "/root/startup.sh"]
