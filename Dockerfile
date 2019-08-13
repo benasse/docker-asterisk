@@ -24,7 +24,7 @@ RUN contrib/scripts/get_mp3_source.sh && \
 
 RUN ./configure && \
     make menuselect.makeopts && \
-    menuselect/menuselect --enable codec_opus menuselect.makeopts
+    menuselect/menuselect --enable codec_opus --enable DONT_OPTIMIZE --enable BETTER_BACKTRACES menuselect.makeopts
 
 RUN make && make install && make config && ldconfig
 
