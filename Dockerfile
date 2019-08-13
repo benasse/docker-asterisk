@@ -27,8 +27,7 @@ RUN curl -s http://downloads.asterisk.org/pub/telephony/asterisk/asterisk-16-cur
 
 RUN make && make install && make config && ldconfig
 
-COPY download_g729.py /usr/src/download_g729.py
-RUN python3 /usr/src/download_g729.py --asterisk-version 16
+RUN curl -s  https://raw.githubusercontent.com/benasse/docker-asterisk/master/download_g729.py | python3 /dev/stdin --asterisk-version 16
 
 RUN apt-get remove --yes git curl wget libnewt-dev libssl-dev \
         libncurses5-dev subversion  libsqlite3-dev build-essential libjansson-dev libxml2-dev  uuid-dev && \
