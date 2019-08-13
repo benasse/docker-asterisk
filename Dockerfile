@@ -6,7 +6,7 @@ ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update -y && \
     apt-get install --yes git curl wget libnewt-dev libssl-dev \
         libncurses5-dev subversion  libsqlite3-dev build-essential libjansson-dev libxml2-dev  uuid-dev && \
-    apt-get install --yes --no-install-recommends aptitude-common libboost-filesystem1.65.1 libboost-iostreams1.65.1 \
+    apt-get install --yes aptitude-common libboost-filesystem1.65.1 libboost-iostreams1.65.1 \
         libboost-system1.65.1 libcgi-fast-perl libcgi-pm-perl libclass-accessor-perl \
         libcwidget3v5 libencode-locale-perl libfcgi-perl libhtml-parser-perl \
         libhtml-tagset-perl libhttp-date-perl libhttp-message-perl libio-html-perl \
