@@ -14,6 +14,8 @@ RUN apt-get update -y && \
         libsigc++-2.0-0v5 libsub-name-perl libtimedate-perl liburi-perl libxapian30 && \
     apt-get install --yes --no-install-recommends python3-requests
 
+WORKDIR /usr/src/asterisk
+
 RUN curl -s http://downloads.asterisk.org/pub/telephony/asterisk/asterisk-16-current.tar.gz \
     | tar -xvz -C /usr/src/ && mv /usr/src/asterisk-*/* /usr/src/asterisk/ && \
     /usr/src/asterisk/contrib/scripts/get_mp3_source.sh && \
