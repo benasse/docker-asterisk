@@ -23,7 +23,7 @@ RUN curl -s http://downloads.asterisk.org/pub/telephony/asterisk/asterisk-16-cur
     contrib/scripts/install_prereq install && \
     ./configure && \
     make menuselect.makeopts && \
-    menuselect/menuselect --enable codec_opus --enable DONT_OPTIMIZE --enable BETTER_BACKTRACES menuselect.makeopts
+    menuselect/menuselect --enable codec_opus --disable BUILD_NATIVE menuselect.makeopts
 
 RUN make && make install && make config && ldconfig
 
