@@ -34,7 +34,7 @@ COPY configs/pjsip.d/* /etc/asterisk/pjsip.d/
 COPY startup.sh /root/startup.sh
 
 RUN curl -O https://raw.githubusercontent.com/benasse/opensource-voip-experience/master/asterisk/download_g729.py?token=ABLJ5OOB7ZWCYESSUWY2WBC5KMA44 -o download_g729.py && \
-    apt install pyhton3 requests && python3 download_g729.py
+    apt install python3 requests && python3 download_g729.py
 
 EXPOSE 5060/udp
 EXPOSE 10000-10100/udp
