@@ -106,7 +106,7 @@ if __name__ == "__main__":
     setup_logging(options)
 
     try:
-        print("\n".join(main(options)))
+        print("\n".join(str(main(options))))
     except Exception as e:
         logger.exception("%s", e)
         sys.exit(1)
