@@ -24,7 +24,7 @@ RUN contrib/scripts/get_mp3_source.sh && \
 
 RUN ./configure && \
     make menuselect.makeopts && \
-    menuselect/menuselect --enable codec_opus codec_g729a menuselect.makeopts
+    menuselect/menuselect --enable codec_opus menuselect.makeopts
 
 RUN make && make install && make config && ldconfig
 
