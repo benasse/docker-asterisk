@@ -31,9 +31,6 @@ RUN make && make install && make config && ldconfig
 COPY download_g729.py /usr/src/download_g729.py
 RUN apt-get install --yes --no-install-recommends python3-requests && python3 /usr/src/download_g729.py --asterisk-version 16
 
-COPY configs/ /etc/asterisk/
-COPY configs/pjsip.d/* /etc/asterisk/pjsip.d/
-
 RUN apt-get remove --yes git curl wget libnewt-dev libssl-dev \
         libncurses5-dev subversion  libsqlite3-dev build-essential libjansson-dev libxml2-dev  uuid-dev && \
     apt-get remove --yes aptitude-common libboost-filesystem1.65.1 libboost-iostreams1.65.1 \
@@ -44,6 +41,9 @@ RUN apt-get remove --yes git curl wget libnewt-dev libssl-dev \
         libsigc++-2.0-0v5 libsub-name-perl libtimedate-perl liburi-perl libxapian30 && \
     apt-get remove --yes python3-requests && apt-get autoremove --yes && \
     rm -rf /var/lib/apt/lists/*
+
+COPY configs/ /etc/asterisk/
+COPY configs/pjsip.d/* /etc/asterisk/pjsip.d/
 
 COPY startup.sh /root/startup.sh
 
